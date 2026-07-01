@@ -1,7 +1,7 @@
 import { useTransitionNavigate } from '../../context/TransitionContext';
 import logoSmall from '../../assets/shared/logo-small.png';
 import logoLarge from '../../assets/shared/logo-large.svg';
-import resultsBackground from '../../assets/shared/results-background.png';
+import resultsBackground from '../../assets/shared/Results Background (new).png';
 import directorVideo from '../../assets/shared/director-video.jpg';
 import clampImg from '../../assets/shared/clamp.png';
 import arrowImg from '../../assets/shared/arrow.png';

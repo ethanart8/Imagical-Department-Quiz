@@ -2,20 +2,24 @@ import { useEffect, useRef, useState } from 'react';
 
 const DESIGN_WIDTH = 1556.8699951171875;
 
-export default function FigmaScale({ height, children }) {
+export default function FigmaScale({ height, fitHeight = false, children }) {
   const containerRef = useRef(null);
   const [scale, setScale] = useState(1);
 
   useEffect(() => {
     const updateScale = () => {
       if (containerRef.current) {
-        setScale(containerRef.current.offsetWidth / DESIGN_WIDTH);
+        setScale(
+          fitHeight
+            ? containerRef.current.offsetHeight / height
+            : containerRef.current.offsetWidth / DESIGN_WIDTH
+        );
       }
     };
     updateScale();
     window.addEventListener('resize', updateScale);
     return () => window.removeEventListener('resize', updateScale);
-  }, []);
+  }, [fitHeight, height]);
 
   return (
     <div
@@ -23,7 +27,7 @@ export default function FigmaScale({ height, children }) {
       style={{
         position: 'relative',
         width: '100%',
-        height: height * scale,
+        height: fitHeight ? '100vh' : height * scale,
         overflow: 'hidden',
       }}
     >

@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #1e1e1e;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+img {
+  max-width: none;
+}
+
+p {
+  margin: 0;
+}
+
+@keyframes logoPulse {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}

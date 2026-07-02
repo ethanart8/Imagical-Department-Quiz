@@ -1,7 +1,6 @@
 import { useTransitionNavigate } from '../../context/TransitionContext';
 import logoSmall from '../../assets/shared/logo-small.png';
 import logoLarge from '../../assets/shared/logo-large.svg';
-import resultsBackground from '../../assets/shared/Results Background (new).png';
 import directorVideo from '../../assets/shared/director-video.jpg';
 import clampImg from '../../assets/shared/clamp.png';
 import arrowImg from '../../assets/shared/arrow.png';
@@ -74,13 +73,6 @@ export default function ResultsCommon() {
 
   return (
     <>
-      {/* page background */}
-      <img
-        src={resultsBackground}
-        alt=""
-        style={{ position: 'absolute', left: 0, top: 0, width: 1556.87, height: 10155, objectFit: 'cover' }}
-      />
-
       {/* logo top-left */}
       <img
         src={logoSmall}
@@ -104,66 +96,37 @@ export default function ResultsCommon() {
         }}
       >
         <div style={{ transform: 'rotate(48.4deg)' }}>
-          <div style={{ position: 'relative', width: 378.151, height: 440.994, overflow: 'hidden'}}>
-            <img
-              src={clampImg}
-              alt=""
-              style={{ position: 'absolute', left: '-27.7%', top: '-16.63%', width: '155.4%', height: '133.26%' }}
-            />
+          <div style={{ position: 'relative', width: 378.151, height: 440.994, overflow: 'hidden' }}>
+            <img src={clampImg} alt="" style={{ position: 'absolute', left: '-27.7%', top: '-16.63%', width: '155.4%', height: '133.26%' }} />
           </div>
         </div>
       </div>
 
       {/* top arrow accent */}
-      <img
-        src={arrowImg}
-        alt=""
-        style={{ position: 'absolute', left: 665.96, top: 2174.58, width: 142.6, height: 487.961, objectFit: 'cover' }}
-      />
+      <img src={arrowImg} alt="" style={{ position: 'absolute', left: 665.96, top: 2074.58, width: 142.6, height: 487.961, objectFit: 'cover' }} />
+
       {/* bottom arrow accent */}
-      <img
-        src={arrowImg}
-        alt=""
-        style={{ position: 'absolute', left: 666.03, top: 6155.99, width: 142.6, height: 487.961, objectFit: 'cover' }}
-      />
+      <img src={arrowImg} alt="" style={{ position: 'absolute', left: 666.03, top: 6155.99, width: 142.6, height: 487.961, objectFit: 'cover' }} />
 
       {/* director arrow accent */}
-      <img
-        src={directorArrowImg}
-        alt=""
-        style={{ position: 'absolute', left: -135.91, top: 4931.35, width: 798.04, height: 961.969, objectFit: 'cover', zIndex: 1 }}
-      />
+      <img src={directorArrowImg} alt="" style={{ position: 'absolute', left: -135.91, top: 4931.35, width: 798.04, height: 961.969, objectFit: 'cover', zIndex: 1 }} />
 
       {/* paper clips accent */}
-      <div
-        style={{
-          position: 'absolute',
-          left: -272.1,
-          top: 9206,
-          width: 768.441,
-          height: 631.981,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
-      >
+      <div style={{ position: 'absolute', left: -272.1, top: 9206, width: 768.441, height: 631.981, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <div style={{ transform: 'rotate(75.94deg)', width: 483.41, height: 671.096 }}>
           <img src={paperclipsImg} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
         </div>
       </div>
 
       {/* small paper accent */}
-      <img
-        src={smallPaperImg}
-        alt=""
-        style={{ position: 'absolute', left: 1244.07, top: 6987.96, width: 374.85, height: 397.568, objectFit: 'cover' }}
-      />
+      <img src={smallPaperImg} alt="" style={{ position: 'absolute', left: 1244.07, top: 6987.96, width: 374.85, height: 397.568, objectFit: 'cover' }} />
 
-      {/* mid section: director video + coffee chat */}
+      {/* director video */}
       <div style={{ position: 'absolute', left: 251.8, top: 4298.98, width: 1053.405, height: 1599.471, borderRadius: 77.456, overflow: 'hidden' }}>
         <img src={directorVideo} alt="director" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
       </div>
 
+      {/* Meet the Director label */}
       <div style={{ position: 'absolute', left: 93.01, top: 4159.56, display: 'flex', alignItems: 'center', gap: 14.523, height: 95.852 }}>
         <div style={{ background: '#fff', display: 'flex', alignItems: 'center', padding: '5.809px 29.046px' }}>
           <p style={{ margin: 0, fontFamily: 'Inter', fontWeight: 600, fontSize: 69.711, color: '#0e5757', whiteSpace: 'nowrap' }}>Meet</p>
@@ -176,6 +139,7 @@ export default function ResultsCommon() {
         </div>
       </div>
 
+      {/* Coffee Chat */}
       <div
         style={{
           position: 'absolute',
@@ -199,9 +163,8 @@ export default function ResultsCommon() {
         <span>--&gt;</span>
       </div>
 
-      {/* bottom: schedule, apply, compatibility, sign off */}
+      {/* schedule, apply, compatibility */}
       <div style={{ position: 'absolute', left: 0.07, top: 7420.63, width: 1556.87, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 193.641 }}>
-        {/* schedule */}
         <div style={{ position: 'relative', width: '100%' }}>
           <div style={{ position: 'absolute', left: 0, top: 300, width: '100%', height: 85.202, background: '#34bcbc' }} />
           <div style={{ position: 'relative', marginLeft: 92.95, width: 1370.975, display: 'flex', flexDirection: 'column', gap: 46.474 }}>
@@ -210,15 +173,12 @@ export default function ResultsCommon() {
               <p style={italicText}>DATE</p>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 29.046, width: '100%' }}>
-              {SCHEDULE_ROWS.map((row) => (
-                <ScheduleRow key={row.event} {...row} />
-              ))}
+              {SCHEDULE_ROWS.map((row) => <ScheduleRow key={row.event} {...row} />)}
             </div>
             <p style={italicText}>* = Invite Only</p>
           </div>
         </div>
 
-        {/* apply now */}
         <div
           style={{
             display: 'flex',
@@ -239,16 +199,13 @@ export default function ResultsCommon() {
           <span>--&gt;</span>
         </div>
 
-        {/* compatibility */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 46.474, alignItems: 'center', width: 1370.975 }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
             <p style={italicText}>CLICK TO VIEW</p>
             <p style={{ ...italicText, textTransform: 'uppercase' }}>Compatibility*</p>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 29.046, width: '100%' }}>
-            {COMPATIBILITY_ROWS.map((row) => (
-              <CompatibilityRow key={row.label} {...row} onNavigate={navigate} />
-            ))}
+            {COMPATIBILITY_ROWS.map((row) => <CompatibilityRow key={row.label} {...row} onNavigate={navigate} />)}
           </div>
         </div>
       </div>

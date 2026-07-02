@@ -125,28 +125,15 @@ export default function QuestionsPage({ pageIndex }) {
                       >
                         <div
                           style={{
-                            position: 'relative',
                             width: v(38.728),
                             height: v(38.728),
                             marginTop: v(15.49),
+                            borderRadius: '50%',
+                            border: `${v(3.873)} solid #fff`,
+                            background: selected ? '#43dad6' : 'transparent',
                             flexShrink: 0,
                           }}
-                        >
-                          <img src={radioButton} alt="" style={{ width: '100%', height: '100%' }} />
-                          {selected && (
-                            <div
-                              style={{
-                                position: 'absolute',
-                                top: '25%',
-                                left: '25%',
-                                width: '50%',
-                                height: '50%',
-                                borderRadius: '50%',
-                                background: '#43dad6',
-                              }}
-                            />
-                          )}
-                        </div>
+                        />
                         <p style={{ margin: 0, fontFamily: 'Inter', fontWeight: 300, fontSize: v(54.219), color: '#fff' }}>
                           {choice}
                         </p>

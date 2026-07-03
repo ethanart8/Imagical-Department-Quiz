@@ -13,8 +13,8 @@ export default function PrResults() {
         <div style={{ position: 'relative', width: '100%', height: '100%' }}>
           <ResultsCommon />
 
-          <img src={microphoneImg} alt="" style={{ position: 'absolute', left: 570.55, top: 119.77, width: 1093, height: 1002, objectFit: 'cover' }} />
-          <img src={prImage1} alt="" style={{ position: 'absolute', left: -75.78, top: 1924.93, width: 595.26, height: 647.592, objectFit: 'cover' }} />
+          <img src={microphoneImg} alt="" style={{ position: 'absolute', left: 570.55, top: 19.77, width: 1093, height: 1002, objectFit: 'cover' }} />
+          <img src={prImage1} alt="" style={{ position: 'absolute', left: -75.78, top: 1824.93, width: 595.26, height: 647.592, objectFit: 'cover' }} />
 
           <ResultsHero
             title="PUBLIC RELATION"

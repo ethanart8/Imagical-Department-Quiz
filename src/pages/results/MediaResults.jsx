@@ -13,8 +13,8 @@ export default function MediaResults() {
         <div style={{ position: 'relative', width: '100%', height: '100%' }}>
           <ResultsCommon />
 
-          <img src={clipboardImg} alt="" style={{ position: 'absolute', left: -171.17, top: 2057.54, width: 805, height: 993, objectFit: 'cover' }} />
-          <img src={moneyImg} alt="" style={{ position: 'absolute', left: 839.06, top: 279.58, width: 585.08, height: 691.427, objectFit: 'cover' }} />
+          <img src={clipboardImg} alt="" style={{ position: 'absolute', left: -171.17, top: 1957.54, width: 805, height: 993, objectFit: 'cover' }} />
+          <img src={moneyImg} alt="" style={{ position: 'absolute', left: 839.06, top: 179.58, width: 585.08, height: 691.427, objectFit: 'cover' }} />
 
           <ResultsHero
             title="MEDIA"

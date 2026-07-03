@@ -1,7 +1,7 @@
 export default function ResultsHero({ title, description, deptBlockLeft = 313.7, deptBlockWidth = 1150.225 }) {
   return (
     <>
-      <div style={{ position: 'absolute', left: 92.95, top: 1023.12, display: 'flex', alignItems: 'center', gap: 14.523, height: 95.852 }}>
+      <div style={{ position: 'absolute', left: 92.95, top: 923.12, display: 'flex', alignItems: 'center', gap: 14.523, height: 95.852 }}>
         <div style={{ background: '#fff', display: 'flex', alignItems: 'center', padding: '5.809px 29.046px' }}>
           <p style={{ margin: 0, fontFamily: 'Inter', fontWeight: 600, fontSize: 69.711, color: '#0e5757', whiteSpace: 'nowrap' }}>YOUR</p>
         </div>
@@ -14,7 +14,7 @@ export default function ResultsHero({ title, description, deptBlockLeft = 313.7,
         style={{
           position: 'absolute',
           left: deptBlockLeft,
-          top: 1158.66,
+          top: 1058.66,
           width: deptBlockWidth,
           display: 'flex',
           flexDirection: 'column',
@@ -36,7 +36,7 @@ export default function ResultsHero({ title, description, deptBlockLeft = 313.7,
         style={{
           position: 'absolute',
           left: 391.15,
-          top: 1615.66,
+          top: 1515.66,
           width: 1072.769,
           margin: 0,
           fontFamily: 'Inter',

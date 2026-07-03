@@ -13,8 +13,8 @@ export default function CreativeResults() {
         <div style={{ position: 'relative', width: '100%', height: '100%' }}>
           <ResultsCommon />
 
-          <img src={lightbulbImg} alt="" style={{ position: 'absolute', left: 747.11, top: 131.99, width: 808, height: 938, objectFit: 'cover' }} />
-          <img src={cumpledPaperImg} alt="" style={{ position: 'absolute', left: -236.57, top: 1502.78, width: 694, height: 893, objectFit: 'cover' }} />
+          <img src={lightbulbImg} alt="" style={{ position: 'absolute', left: 747.11, top: 31.99, width: 808, height: 938, objectFit: 'cover' }} />
+          <img src={cumpledPaperImg} alt="" style={{ position: 'absolute', left: -236.57, top: 1402.78, width: 694, height: 893, objectFit: 'cover' }} />
 
           <ResultsHero
             title="CREATIVE"

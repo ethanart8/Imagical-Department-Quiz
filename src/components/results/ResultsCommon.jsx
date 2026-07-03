@@ -135,10 +135,10 @@ export default function ResultsCommon() {
       </div>
 
       {/* top arrow accent */}
-      <img src={arrowImg} alt="" style={{ position: 'absolute', left: 665.96, top: 2074.58, width: 142.6, height: 487.961, objectFit: 'cover' }} />
+      <img src={arrowImg} alt="" style={{ position: 'absolute', left: 665.96, top: 1974.58, width: 142.6, height: 487.961, objectFit: 'cover', animation: 'arrowBounce 1.5s ease-in-out infinite' }} />
 
       {/* bottom arrow accent */}
-      <img src={arrowImg} alt="" style={{ position: 'absolute', left: 666.03, top: 6155.99, width: 142.6, height: 487.961, objectFit: 'cover' }} />
+      <img src={arrowImg} alt="" style={{ position: 'absolute', left: 666.03, top: 6155.99, width: 142.6, height: 487.961, objectFit: 'cover', animation: 'arrowBounce 1.5s ease-in-out infinite' }} />
 
       {/* director arrow accent */}
       <img src={directorArrowImg} alt="" style={{ position: 'absolute', left: -135.91, top: 4931.35, width: 798.04, height: 961.969, objectFit: 'cover', zIndex: 1 }} />
@@ -175,19 +175,19 @@ export default function ResultsCommon() {
       <div
         style={{
           position: 'absolute',
-          left: 782.37,
+          right: 93,
           top: 5941.05,
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           gap: 7.746,
-          padding: '19.364px 116.184px',
+          padding: '19.364px 100px',
           border: '7.746px solid #fff',
           borderRadius: 387.281,
           color: '#fff',
           fontFamily: 'Inter',
           fontWeight: 400,
-          fontSize: 61.965,
+          fontSize: 55,
           whiteSpace: 'nowrap',
         }}
       >
@@ -207,7 +207,9 @@ export default function ResultsCommon() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: 29.046, width: '100%' }}>
               {SCHEDULE_ROWS.map((row) => <ScheduleRow key={row.event} {...row} />)}
             </div>
-            <p style={italicText}>* = Invite Only</p>
+            <div style={{ textAlign: 'right', width: '100%' }}>
+              <p style={italicText}>* = Invite Only</p>
+            </div>
           </div>
         </div>
 
@@ -217,7 +219,7 @@ export default function ResultsCommon() {
             alignItems: 'center',
             justifyContent: 'center',
             gap: 7.746,
-            padding: '19.364px 116.184px',
+            padding: '19.364px 100px',
             background: '#43dad6',
             borderRadius: 387.281,
             color: '#0e5757',
@@ -234,7 +236,7 @@ export default function ResultsCommon() {
         <div style={{ display: 'flex', flexDirection: 'column', gap: 46.474, alignItems: 'center', width: 1370.975 }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
             <p style={italicText}>CLICK TO VIEW</p>
-            <p style={{ ...italicText, textTransform: 'uppercase' }}>Compatibility*</p>
+            <p style={{ ...italicText, textTransform: 'uppercase' }}>Compatibility**</p>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 29.046, width: '100%' }}>
             {compatibilityRows.map((row, i) => (
@@ -247,7 +249,7 @@ export default function ResultsCommon() {
       {/* sign-off */}
       <div style={{ position: 'absolute', left: 93.01, top: 9721.08, width: 1370.975, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 57 }}>
         <div style={{ textAlign: 'right', width: '100%' }}>
-          <p style={{ ...italicText, whiteSpace: 'normal' }}>* = This quiz isn't definitive.</p>
+          <p style={{ ...italicText, whiteSpace: 'normal' }}>** = This quiz isn't definitive.</p>
           <p style={{ ...italicText, whiteSpace: 'normal' }}>Apply to what speaks to you, this quiz is for fun lmao </p>
         </div>
         <img src={fullLine} alt="" style={{ display: 'block', width: 1370.975, height: 3.87281 }} />

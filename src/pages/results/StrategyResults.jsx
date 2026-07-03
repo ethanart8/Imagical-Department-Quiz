@@ -17,7 +17,7 @@ export default function StrategyResults() {
             style={{
               position: 'absolute',
               left: -247.86,
-              top: 1162.54,
+              top: 1062.54,
               width: 698.387,
               height: 1131.833,
               display: 'flex',
@@ -36,7 +36,7 @@ export default function StrategyResults() {
             style={{
               position: 'absolute',
               left: 824.91,
-              top: 384.1,
+              top: 284.1,
               width: 970.028,
               height: 769.497,
               display: 'flex',

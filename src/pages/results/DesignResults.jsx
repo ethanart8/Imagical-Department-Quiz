@@ -13,8 +13,8 @@ export default function DesignResults() {
         <div style={{ position: 'relative', width: '100%', height: '100%' }}>
           <ResultsCommon />
 
-          <img src={pencilImg} alt="" style={{ position: 'absolute', left: -25.16, top: -204.57, width: 1991, height: 1440, objectFit: 'cover' }} />
-          <img src={designImage1} alt="" style={{ position: 'absolute', left: -152.96, top: 1927.42, width: 677.14, height: 981.793, objectFit: 'cover' }} />
+          <img src={pencilImg} alt="" style={{ position: 'absolute', left: -25.16, top: -304.57, width: 1991, height: 1440, objectFit: 'cover' }} />
+          <img src={designImage1} alt="" style={{ position: 'absolute', left: -152.96, top: 1827.42, width: 677.14, height: 981.793, objectFit: 'cover' }} />
 
           <ResultsHero
             title="DESIGN"

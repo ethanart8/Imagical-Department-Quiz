@@ -1,4 +1,7 @@
+import { useLocation } from 'react-router-dom';
 import { useTransitionNavigate } from '../../context/TransitionContext';
+import { useQuiz } from '../../context/QuizContext';
+import { departmentForChoice } from '../../data/quizData';
 import logoSmall from '../../assets/shared/logo-small.png';
 import logoLarge from '../../assets/shared/logo-large.svg';
 import directorVideo from '../../assets/shared/director-video.jpg';
@@ -35,13 +38,34 @@ const dashedLineStyle = (color) => ({
   backgroundImage: `repeating-linear-gradient(to right, ${color} 0, ${color} 19.36px, transparent 19.36px, transparent 38.72px)`,
 });
 
-const COMPATIBILITY_ROWS = [
-  { label: 'Strategy Department', percent: '90%', underline: false, path: '/results/strategy' },
-  { label: 'Media Department', percent: '83%', underline: true, path: '/results/media' },
-  { label: 'Design Department', percent: '75%', underline: true, path: '/results/design' },
-  { label: 'Public Relations Department', percent: '71%', underline: true, path: '/results/pr' },
-  { label: 'Creative Department', percent: '68%', underline: true, path: '/results/creative' },
-];
+const DEPT_META = {
+  strategy: { label: 'Strategy Department', path: '/results/strategy' },
+  creative: { label: 'Creative Department', path: '/results/creative' },
+  media:    { label: 'Media Department', path: '/results/media' },
+  pr:       { label: 'Public Relations Department', path: '/results/pr' },
+  design:   { label: 'Design Department', path: '/results/design' },
+};
+
+function computeCompatibility(answers, currentDept) {
+  const counts = { strategy: 0, creative: 0, media: 0, pr: 0, design: 0 };
+  const validAnswers = Object.values(answers).filter(v => v != null);
+  validAnswers.forEach(choiceIndex => {
+    counts[departmentForChoice(choiceIndex)]++;
+  });
+  const total = validAnswers.length || 1;
+  const rows = Object.keys(counts).map(dept => ({
+    dept,
+    percent: Math.round(50 + (counts[dept] / total) * 50),
+    ...DEPT_META[dept],
+  }));
+  rows.sort((a, b) => {
+    if (b.percent !== a.percent) return b.percent - a.percent;
+    if (a.dept === currentDept) return -1;
+    if (b.dept === currentDept) return 1;
+    return 0;
+  });
+  return rows;
+}
 
 function ScheduleRow({ event, date, dark }) {
   return (
@@ -53,23 +77,31 @@ function ScheduleRow({ event, date, dark }) {
   );
 }
 
-function CompatibilityRow({ label, percent, underline, path, onNavigate }) {
+function CompatibilityRow({ label, percent, isCurrent, path, onNavigate }) {
   return (
     <div style={{ display: 'flex', alignItems: 'center', gap: 30.982, width: '100%' }}>
       <p
         onClick={() => onNavigate(path)}
-        style={{ ...italicText, textDecoration: underline ? 'underline' : 'none', cursor: 'pointer' }}
+        style={{
+          ...italicText,
+          textDecoration: isCurrent ? 'none' : 'underline',
+          cursor: 'pointer',
+        }}
       >
         {label}
       </p>
       <div style={dashedLineStyle('#fff')} />
-      <p style={italicText}>{percent}</p>
+      <p style={italicText}>{percent}%</p>
     </div>
   );
 }
 
 export default function ResultsCommon() {
   const navigate = useTransitionNavigate();
+  const { answers } = useQuiz();
+  const { pathname } = useLocation();
+  const currentDept = pathname.split('/').pop();
+  const compatibilityRows = computeCompatibility(answers, currentDept);
 
   return (
     <>
@@ -205,7 +237,9 @@ export default function ResultsCommon() {
             <p style={{ ...italicText, textTransform: 'uppercase' }}>Compatibility*</p>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 29.046, width: '100%' }}>
-            {COMPATIBILITY_ROWS.map((row) => <CompatibilityRow key={row.label} {...row} onNavigate={navigate} />)}
+            {compatibilityRows.map((row, i) => (
+              <CompatibilityRow key={row.dept} {...row} isCurrent={i === 0} onNavigate={navigate} />
+            ))}
           </div>
         </div>
       </div>
